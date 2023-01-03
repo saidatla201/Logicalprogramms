@@ -6,28 +6,29 @@ using System.Threading.Tasks;
 
 namespace LogicalPrograms
 {
-    internal class temperatureconversion
+    internal class ReverseNumber
     {
         static void Main(string[] args)
         {
-            // Celsius to Farhenheat
-            Console.WriteLine("Enter the Temperature in celsius: ");
-            float Celsiusvalue=Convert.ToInt32 (Console .ReadLine());
-            float CeltoFarvalue = ((Celsiusvalue  * 9 / 5) + 32); ;
-            Console.WriteLine("Temperature in Farhenheat:  ", CeltoFarvalue);
+            ReverseNumber .reverse(123);
+        }
+        public static void reverse(int num)
 
-            //Farhenheat to Celsius
+        {
+            Console.WriteLine("enter the input number");
+            num = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Enter the Temperature in Farhenheat: ");
-            float Farhenheatvalue = Convert.ToInt32(Console.ReadLine());
-            float FarhentoCelsius= (Farhenheatvalue  - 32) * (5 / (float)9);
-            Console.WriteLine("Temperature in Farhenheat:  ",FarhentoCelsius );
+            int remainder = 0, reverse = 0;
+            while (num != 0)
+            {
+                remainder = num % 10;
+                reverse = (reverse * 10) + remainder;
+                num = num / 10;
 
+            }
+            Console.WriteLine("the reverse num is :" + reverse);
             Console.ReadLine();
-
-
-
-
+            
         }
     }
 }

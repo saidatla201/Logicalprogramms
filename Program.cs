@@ -6,29 +6,24 @@ using System.Threading.Tasks;
 
 namespace LogicalPrograms
 {
-    internal class ReverseNumber
+    internal class Program
     {
         static void Main(string[] args)
         {
-            ReverseNumber .reverse(123);
-        }
-        public static void reverse(int num)
+            Console.WriteLine("Enter Principal Amount : ");
+            double P = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter Year : ");
+            double Y = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter Rate of Interest ; ");
+            double R = Convert.ToDouble(Console.ReadLine());
 
-        {
-            Console.WriteLine("enter the input number");
-            num = Convert.ToInt32(Console.ReadLine());
+            double n = 12 * Y;
+            double r = R / (12 * 100);
 
-            int remainder = 0, reverse = 0;
-            while (num != 0)
-            {
-                remainder = num % 10;
-                reverse = (reverse * 10) + remainder;
-                num = num / 10;
-
-            }
-            Console.WriteLine("the reverse num is :" + reverse);
+            double payment = (P * r) / (1 - Math.Pow((1 + r), -n));
+            Console.WriteLine("Monthly payment with interest: " +payment );
             Console.ReadLine();
-            
-        }
+
+        }  
     }
 }

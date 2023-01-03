@@ -10,18 +10,17 @@ namespace LogicalPrograms
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter Principal Amount : ");
-            double P = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Enter Year : ");
-            double Y = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Enter Rate of Interest ; ");
-            double R = Convert.ToDouble(Console.ReadLine());
-
-            double n = 12 * Y;
-            double r = R / (12 * 100);
-
-            double payment = (P * r) / (1 - Math.Pow((1 + r), -n));
-            Console.WriteLine("Monthly payment with interest: " +payment );
+            int num1 = 0, num2 = 1, num3;
+            Console.WriteLine("Enter a number :");
+            int count = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(num1+", "+num2);
+            for(int i = 2; i <= count; i++)
+            {
+                num3 = num1 + num2;
+                Console.Write("," + num3);
+                num1 = num2;
+                num2 = num3;
+            }
             Console.ReadLine();
 
         }  
